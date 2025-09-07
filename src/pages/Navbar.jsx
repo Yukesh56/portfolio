@@ -1,10 +1,11 @@
 import { Link } from "react-scroll";
 import "../styles/Navbar.css";
 
+import logo from '../assets/logo.png'
 const Navbar = () => {
   return (
     <div className="navbar">
-      <img className="image2" src="/R.jpg" alt="Logo" />
+      <img className="image2" src={logo} alt="Logo" />
       <ul className="navbar-links">
         <li>
           <Link 

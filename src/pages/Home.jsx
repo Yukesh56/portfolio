@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../styles/Home.css'
+import Navbar from './Navbar';
 
 
 export const Home = () => {
@@ -273,5 +274,4 @@ export const Home = () => {
     
   )
 }
-
 export default Home

@@ -29,10 +29,11 @@
 }
 .image2{
     margin-left: 50px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid black;
 }
 li {
   transition: transform 0.3s ease;
