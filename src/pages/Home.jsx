@@ -81,7 +81,7 @@ export const Home = () => {
                                       <h1><span>Availability :</span> Immediate Joiner</h1>
                                   </div>
                               </div>
-                              <a href='/Yukesh_R_Resume.pdf' download={true}><button className='btn'>Download CV</button></a>
+                              <a href='Yukesh_R_Resume.pdf' download><button className='btn'>Download CV</button></a>
                             </div>
                           </div>
 
