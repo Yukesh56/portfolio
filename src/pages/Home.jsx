@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import '../styles/Home.css'
 import Navbar from './Navbar';
+import profilePicture from '../assets/yukesh.png';
+import blackpic from '../assets/yukesh3.jpeg';
+import email from '../assets/Email.png';
+import call from '../assets/Call.png';
+import linkedin from '../assets/linkedin.png';
+
 
 
 export const Home = () => {
@@ -21,11 +27,11 @@ export const Home = () => {
                 <h2>Full Stack Developer</h2>
                 <div className="buttons">
                   <button className='btn-contact'><a href="#Contact">Contact Me</a></button>
-                  <a href='/Yukesh_R_Resume.pdf' download={true}><button className='btn-download'>Download CV</button></a>
+                  <a href='Yukesh_R_Resume.pdf' download><button className='btn-download'>Download CV</button></a>
                  </div>
               </div>
               <div className='child-right'>
-                <img alt='progile-picture' src='public\Images\yukesh.png' className='profile-img'></img>
+                <img alt='progile-picture' src={profilePicture} className='profile-img'></img>
                 <pre>I am a Full-Stack Developer.<br></br>
                   Skilled in building scalable,<br></br>
                  user-focused applications <br></br> from front-end to back-end.</pre>
@@ -52,7 +58,7 @@ export const Home = () => {
                             <img 
                               alt='Image2' 
                               className='bio-img' 
-                              src='public\Images\yukesh3.jpeg' 
+                              src={blackpic} 
                             />
                             <div className='bio-content'>
                               {/* <h2>About Me</h2> */}
@@ -250,17 +256,17 @@ export const Home = () => {
                   <p>If you'd like to contact me or just 
                     say hello feel free to reach out</p>
                   <div className='contact-child'>
-                      <img alt='Email' src='public\Images\Email.png' className='email-img'></img>
+                      <img alt='Email' src={email} className='email-img'></img>
                       <h2> <span>Email: </span> </h2>
                       <h2>yukeshreddy.56@gmail.com</h2>
                   </div>
                   <div className='contact-child'>
-                      <img alt='Phone' src='public\Images\Call.png' className='email-img'></img>
+                      <img alt='Phone' src={call} className='email-img'></img>
                       <h2> <span>Phone: </span> </h2>
                       <h2>+91 6304729155</h2>
                   </div>
                   <div className='contact-child'>
-                      <img alt='Linkedin' src='public\Images\linkedin.png' className='email-img'></img>
+                      <img alt='Linkedin' src={linkedin} className='email-img'></img>
                       <h2> <span>Linkedin:</span> </h2>
                       <h2><a href='https://www.linkedin.com/in/yukesh-reddy-2bab281ab/' target='_blank'>YukeshReddy</a></h2>                      
                   </div>
