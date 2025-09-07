@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Home.css'
-import Navbar from './Navbar';
 import profilePicture from '../assets/yukesh.png';
 import blackpic from '../assets/yukesh3.jpeg';
 import email from '../assets/Email.png';
 import call from '../assets/Call.png';
 import linkedin from '../assets/linkedin.png';
+import copy from '../assets/copy.png';
 
 
 
@@ -17,6 +19,35 @@ export const Home = () => {
   const [git, setGitHover] = useState(false);
   const [css, setCssHover] = useState(false);
   const [html, setHtmlHover] = useState(false);
+
+
+  const copyEmailToClipboard = () => {
+    const emailAddress = "yukeshreddy.56@gmail.com";
+    navigator.clipboard.writeText(emailAddress)
+      .then(() => {
+        toast.success("Email copied!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+          style: {
+            marginRight: "50px", // pushes the toast a bit left
+            marginTop: "70px",   // optional top margin
+          },
+        });
+      })
+      .catch((error) => {
+        console.log(error)
+        toast.error("Failed to copy!", {
+          position: "top-right",
+          autoClose: 2000,
+        });
+      });
+  };
+
   return (
     <section>
           <section id='Home'>
@@ -197,7 +228,7 @@ export const Home = () => {
             <div className='exp-main'>
                 <h1>Experience</h1>
                 <div className='eng'>
-                    <div class="project-card">
+                    <div className="project-card">
                         <h2>Google to M365 Integration Platform</h2>
                         <h3><span>Role:</span> Backend Developer</h3>
                         <p>
@@ -207,7 +238,7 @@ export const Home = () => {
                         </p>
                         <p><span>Tech Stack:</span> Node.js, Express.js, Microsoft SQL Server, REST APIs, ORM's</p>
                     </div>
-                    <div class="project-card">
+                    <div className="project-card">
                         <h2>M365 to M365 Integration Platform</h2>
                         <h3><span>Role: </span>Full Stack Developer</h3>
                         <p>
@@ -217,7 +248,7 @@ export const Home = () => {
                         </p>
                         <p><strong><span>Tech Stack:</span></strong> React.js, Node.js, Express.js, MS SQL Server, REST APIs, ORM's</p>
                     </div>
-                    <div class="project-card">
+                    <div className="project-card">
                         <h2>Client Support & Issue Resolution</h2>
                         <h3><span>Role: </span>Support Engineer / Developer</h3>
                         <p>
@@ -226,7 +257,7 @@ export const Home = () => {
                         </p>
                         <p><strong><span>Tech Stack:</span></strong> Node.js, Express.js, Microsoft SQL Server, REST APIs</p>
                     </div>
-                    <div class="project-card">
+                    <div className="project-card">
                         <h2>Training & Application Support</h2>
                         <h3><span>Role: </span>Trainee Engineer</h3>
                         <p>
@@ -253,12 +284,13 @@ export const Home = () => {
           <section id='Contact'>
               <div className='contact-main'>
                   <h1>Contact Me</h1>
-                  <p>If you'd like to contact me or just 
-                    say hello feel free to reach out</p>
+                  <p>I would love to hear from you!</p>
                   <div className='contact-child'>
                       <img alt='Email' src={email} className='email-img'></img>
                       <h2> <span>Email: </span> </h2>
                       <h2>yukeshreddy.56@gmail.com</h2>
+                      <img alt='copy' src={copy} className='copy-img' onClick={copyEmailToClipboard}></img>
+                      <ToastContainer />
                   </div>
                   <div className='contact-child'>
                       <img alt='Phone' src={call} className='email-img'></img>
@@ -268,12 +300,9 @@ export const Home = () => {
                   <div className='contact-child'>
                       <img alt='Linkedin' src={linkedin} className='email-img'></img>
                       <h2> <span>Linkedin:</span> </h2>
-                      <h2><a href='https://www.linkedin.com/in/yukesh-reddy-2bab281ab/' target='_blank'>YukeshReddy</a></h2>                      
-                  </div>
-                  <input type='text' placeholder='Your Name' className='input'></input>
-                  <input type='text' placeholder='Your Mail' className='input'></input>
-                  <textarea name="message" rows="4" cols="50" placeholder='Your Message' className='input' style={{resize: "none"}}></textarea>       
-                  <button className='btn-contact'><a href="#">Send Message</a></button>           
+                      <h2><a href='https://www.linkedin.com/in/yukesh-reddy-2bab281ab/' target='_blank' style={{textDecoration:"underline"}}>linkedin/yukesh</a></h2>                      
+                  </div>       
+                  <a href='Yukesh_R_Resume.pdf' download><button className='btn-download'>Download CV</button></a>          
               </div>
           </section>
     </section>
